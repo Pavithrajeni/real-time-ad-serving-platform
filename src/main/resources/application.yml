@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: real-time-ad-serving-platform
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ad_platform_db
+    username: postgres
+    password: NewPassword123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
