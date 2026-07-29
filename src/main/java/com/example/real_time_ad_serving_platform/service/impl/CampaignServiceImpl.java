@@ -47,7 +47,7 @@ public class CampaignServiceImpl implements CampaignService {
     }
 
     @Override
-    @Cacheable("campaigns")
+   @Cacheable("campaigns")
     public CampaignResponse getCampaignById(Long id) {
 
         Campaign campaign = campaignRepository.findById(id)
@@ -83,7 +83,7 @@ public class CampaignServiceImpl implements CampaignService {
         campaignRepository.deleteById(id);
     }
     @Override
-    @Cacheable(value = "ads", key = "#country + '_' + #age")
+   @Cacheable(value = "ads", key = "#country + '_' + #age")
     public AdResponse serveAd(String country, Integer age) {
 
         Campaign campaign = campaignRepository.findByActiveTrueAndCountry(country)
