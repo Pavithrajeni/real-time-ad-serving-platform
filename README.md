@@ -1,67 +1,71 @@
 # 🚀 Real-Time Ad Serving Platform
 
-A backend application built with **Java 17** and **Spring Boot** that simulates a real-time advertisement serving system. The platform manages advertising campaigns and serves the highest-priority advertisement based on user demographics such as **country** and **age**.
+A backend application built with **Java 17** and **Spring Boot** that simulates a real-time advertisement serving system. The platform dynamically serves the highest-priority advertisement based on user demographics such as **country** and **age**.
 
 ---
 
 ## 📌 Features
 
-- Campaign Management (CRUD APIs)
-- Real-Time Ad Serving API
-- Campaign Priority Selection
-- PostgreSQL Database Integration
-- Swagger (OpenAPI) Documentation
-- Docker Support
-- Global Exception Handling
-- Layered Architecture (Controller → Service → Repository)
+- ✅ Campaign Management (CRUD APIs)
+- ✅ Real-Time Ad Serving API
+- ✅ Campaign Priority Selection
+- ✅ PostgreSQL Integration
+- ✅ Docker Support
+- ✅ Swagger (OpenAPI) Documentation
+- ✅ Global Exception Handling
+- ✅ Layered Architecture (Controller → Service → Repository)
 
 ---
 
 ## 🛠 Tech Stack
 
-- Java 17
-- Spring Boot 3.5
-- Spring Data JPA
-- PostgreSQL
-- Docker
-- Swagger (OpenAPI)
-- Maven
-- Lombok
-- Git & GitHub
+| Technology | Description |
+|------------|-------------|
+| Java 17 | Programming Language |
+| Spring Boot 3.5 | Backend Framework |
+| Spring Data JPA | Database Access |
+| PostgreSQL | Relational Database |
+| Docker | Containerization |
+| Swagger | API Documentation |
+| Maven | Build Tool |
+| Lombok | Boilerplate Code Reduction |
+| Git & GitHub | Version Control |
 
 ---
 
-## 🏗 Architecture
-
-> *(Add `architecture.png` here after creating the screenshots folder.)*
+## 🏗 Project Architecture
 
 ```text
-Client
-   │
-   ▼
-Spring Boot REST API
-   │
-   ▼
-Campaign Service
-   │
-   ├── PostgreSQL
-   └── Ad Selection Logic
+                    Client / Swagger
+                           │
+                           ▼
+                 CampaignController
+                           │
+                           ▼
+                  CampaignService
+                           │
+          ┌────────────────┴───────────────┐
+          ▼                                ▼
+ CampaignRepository                 Ad Selection Logic
+          │
+          ▼
+      PostgreSQL Database
 ```
-
 ---
 
-## 📡 API Endpoints
+## 📡 REST API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/campaigns` | Create Campaign |
 | GET | `/api/campaigns` | Get All Campaigns |
-| GET | `/api/campaigns/{id}` | Get Campaign by ID |
+| GET | `/api/campaigns/{id}` | Get Campaign By ID |
 | PUT | `/api/campaigns/{id}` | Update Campaign |
 | DELETE | `/api/campaigns/{id}` | Delete Campaign |
-| GET | `/api/campaigns/ads` | Serve Best Matching Advertisement |
+| GET | `/api/campaigns/ads` | Serve Matching Advertisement |
 
 ---
+
 
 ## 📷 Screenshots
 
